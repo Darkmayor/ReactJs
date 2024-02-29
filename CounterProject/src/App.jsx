@@ -4,30 +4,48 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  let [count, setCount] = useState(0)
+
+  function addValue () {
+    if(count <20){
+      count = count+1
+      setCount(count)
+      console.log(count)
+    }else{
+      alert("Max Value Reached")
+    }
+      
+  }
+
+  function removeValue(){
+    if(count >0){
+      count = count-1
+      setCount(count)
+      // console.log(count)
+    }else{
+      alert("Min Value Reached cannot Remove Further")
+    }
+  }
 
   return (
     <>
+    
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <span>
+          <button
+          onClick={removeValue}
+          >
+          -
+          </button>
+        </span>
+        Counter Value: {count}
+        <span>
+          <button onClick={addValue}>
+            +
+          </button>
+        </span>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
