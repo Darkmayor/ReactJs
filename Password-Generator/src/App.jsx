@@ -37,8 +37,16 @@ function App() {
   } , [length , isNumberAllowed , isCharacterAllowed , PasswordGenerator])
 
   const copyToClipboard = () => {
+
     passwordRef.current?.select();
     window.navigator.clipboard.writeText(password);
+    showNotification()
+  }
+
+  const showNotification = () =>{
+   
+    const message = document.querySelector(".hidden") 
+    
   }
   return (
     <>
@@ -56,7 +64,7 @@ function App() {
             ref={passwordRef}
         />
         <button
-        className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'
+        className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0 hover:bg-blue-300'
         onClick={copyToClipboard}
         >copy</button>
         
