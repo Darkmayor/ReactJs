@@ -1,10 +1,16 @@
+import { Outlet } from 'react-router-dom'
 import './App.css'
+import Footer from './components/Footer/footer'
+import Header from './components/Header/header'
+import React from 'react'
 
 function App() {
 
   return (
     <>
-      <h1 className='text-red-500'>React Router Initialized.....</h1>
+      <Header />
+        <Outlet />
+      <Footer />
     </>
   )
 }
