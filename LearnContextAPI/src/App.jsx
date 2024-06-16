@@ -1,12 +1,19 @@
-
+import Login from './Component/Login'
+import UserContextProvider from './Context/UserContextProvider'
 import './App.css'
+import Profile from './Component/Profile'
 
 function App() {
 
   return (
-    <>
-      <h1> Learning React Context API</h1>
-    </>
+    
+    <UserContextProvider>
+    <h1>Hello from Sanket!</h1>
+     <Login />
+     <Profile/>
+    </UserContextProvider>
+    
+    
   )
 }
 
